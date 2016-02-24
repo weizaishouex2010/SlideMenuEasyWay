@@ -276,6 +276,7 @@ public class MainActivity extends Activity implements View.OnTouchListener {
             int speed = params[0];
             while(true)
             {
+                Log.d(TAG,leftMargin+" ");
                 leftMargin += speed;
                 if(leftMargin>rightEdge)
                 {
@@ -287,14 +288,14 @@ public class MainActivity extends Activity implements View.OnTouchListener {
                     leftMargin = leftEdge;
                     break;
                 }
-
+                publishProgress(leftMargin);
                 try {
                     Thread.sleep(20);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            publishProgress(leftMargin);
+
             if(speed>0)
             {
                 isMenuVisible = true;
@@ -309,7 +310,7 @@ public class MainActivity extends Activity implements View.OnTouchListener {
         @Override
         protected void onProgressUpdate(Integer... values) {
             menuParams.leftMargin = values[0];
-            Log.d(TAG,menuParams.leftMargin+" ");
+//            Log.d(TAG,menuParams.leftMargin+" ");
             menu.setLayoutParams(menuParams);
 
         }
