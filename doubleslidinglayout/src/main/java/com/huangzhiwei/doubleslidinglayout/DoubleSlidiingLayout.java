@@ -251,6 +251,8 @@ public class DoubleSlidiingLayout extends RelativeLayout implements View.OnTouch
                 leftMenuLayout.setVisibility(GONE);
                 rightMenuLayout.setVisibility(VISIBLE);
             }
+
+
         }
     }
 
